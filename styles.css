@@ -18,15 +18,11 @@ body {
 }
 
 .board {
-  display: flex;
-  flex-basis: 33.3333%;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .game-square {
   border: 3px solid green;
-  width: 33%;
-  height: 33%;
 }
