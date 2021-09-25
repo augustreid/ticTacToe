@@ -35,16 +35,20 @@ class Game {
   };
 
   checkForWin() {
-    if (this.a1 === this.a2 === this.a3 || this.b1 === this.b2 === this.b3 ||
-    this.c1 === this.c2 === this.c3 || this.a1 === this.b1 === this.c1 ||
-    this.a2 === this.b2 === this.c2 || this.a3 === this.b3 === this.c3 ||
-    this.a1 === this.b2 === this.c3 || this.a3 === this.b2 === this.c1) {
+    if (
+    (this.a1 === this.a2) && (this.a2 === this.a3) ||
+    (this.b1 === this.b2) && (this.b2 === this.b3) ||
+    (this.c1 === this.c2) && (this.c2 === this.c3) ||
+    (this.a1 === this.b1) && (this.b1 === this.c1) ||
+    (this.a2 === this.b2) && (this.b2 === this.c2) ||
+    (this.a3 === this.b3) && (this.b3 === this.c3) ||
+    (this.a1 === this.b2) && (this.b2 === this.c3) ||
+    (this.a3 === this.b2) && (this.b2 === this.c1))
+    {
       this.win = true;
-      console.log("win");
   } else if (this.a1 && this.a2 && this.a3 && this.b1 && this.b2 && this.b3
     && this.c1 && this.c2 && this.c3) {
       this.draw = true;
-      console.log("draw");
     };
   };
 };
