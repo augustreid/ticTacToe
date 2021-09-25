@@ -19,16 +19,16 @@ class Game {
   };
 
   playerOneTurn(square) {
-    if (!this.square) {
-      this.square = 1;
+    if (!this[square]) {
+      this[square] = 1;
       this.whosTurn = 2;
       console.log(square);
   };
 };
 
   playerTwoTurn(square) {
-    if (!square) {
-      square = 2;
+    if (!this[square]) {
+      this[square] = 2;
       this.whosTurn = 1;
       console.log(square);
     }
@@ -51,23 +51,23 @@ class Game {
 
 var trial = new Game();
 
-trial.playerOneTurn(a1);
+trial.playerOneTurn("a1");
 
-trial.playerTwoTurn(b2);
+trial.playerTwoTurn("b2");
 
-// trial.playerOneTurn(trial.b3);
-//
-// trial.playerTwoTurn(trial.c2);
-//
-// trial.playerOneTurn(trial.c3);
-//
-// trial.playerTwoTurn(trial.a2);
-//
-// trial.playerOneTurn(trial.b1);
-//
-// trial.playerTwoTurn(trial.c1);
-//
-// trial.playerOneTurn(trial.a3);
+trial.playerOneTurn("c2");
+
+trial.playerTwoTurn("b3");
+
+trial.playerOneTurn("c3");
+
+trial.playerTwoTurn("b1");
+
+trial.playerOneTurn("a2");
+
+trial.playerTwoTurn("c1");
+
+trial.playerOneTurn("a3");
 
 trial.checkForWin();
 console.log(trial);
