@@ -4,25 +4,45 @@ body {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  border: 1px solid blue;
+  background-image: url("https://cdn.evergreenlandscapes.ca/wp-content/uploads/2018/06/grass.jpg.webp");
 }
 
 .sidebar{
   width: 25%;
-  border: 3px solid red;
+  background-image: linear-gradient(#fffa75, #75a5ff, #2c6909);
 }
 
 .main {
-  width: 50%;
-  border: 3px solid purple;
+  width: 100%;
 }
 
 .board {
+  width: 500px;
+  height: 450px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  margin-top: 14%;
+}
+
+.no-top {
+  border-top: 0;
+}
+
+.no-right {
+  border-right: 0;
+}
+
+.no-left {
+  border-left: 0;
+}
+
+.no-bottom {
+  border-bottom: 0;
 }
 
 .game-square {
-  border: 3px solid green;
+  font-size: 65pt;
+  text-align: center;
+  border-style: solid;
 }
