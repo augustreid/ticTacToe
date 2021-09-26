@@ -49,11 +49,11 @@ function render() {
   for (var i = 0; i < squares.length; i++) {
     console.log("bloop");
     if (squares[i] === 1) {
-      beesAndSuns[i].innerText = "bees";
-      console.log("bees");
-    } else if (squares[i] === 2) {
-      beesAndSuns[i].innerText = "suns";
+      beesAndSuns[i].innerHTML = "&#127803";
       console.log("suns");
+    } else if (squares[i] === 2) {
+      beesAndSuns[i].innerHTML = "&#128029";
+      console.log("bees");
     };
   };
 };
