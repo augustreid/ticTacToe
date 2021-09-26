@@ -1,4 +1,4 @@
-var Player = require("./player.js");
+// var Player = require("./player.js");
 
 class Game {
   constructor() {
@@ -51,30 +51,44 @@ class Game {
       this.draw = true;
     };
   };
+
+  resetBoard() {
+    this.a1 = 0;
+    this.a2 = 0;
+    this.a3 = 0;
+    this.b1 = 0;
+    this.b2 = 0;
+    this.b3 = 0;
+    this.c1 = 0;
+    this.c2 = 0;
+    this.c3 = 0;
+    this.win = false;
+    this.draw = false;
+  };
 };
 
-var trial = new Game();
-
-trial.playerOneTurn("a1");
-
-trial.playerTwoTurn("b2");
-
-trial.playerOneTurn("c2");
-
-trial.playerTwoTurn("b3");
-
-trial.playerOneTurn("c3");
-
-trial.playerTwoTurn("b1");
-
-trial.playerOneTurn("a2");
-
-trial.playerTwoTurn("c1");
-
-trial.playerOneTurn("a3");
-
-trial.checkForWin();
-console.log(trial);
+// var trial = new Game();
+//
+// trial.playerOneTurn("a1");
+//
+// trial.playerTwoTurn("b2");
+//
+// trial.playerOneTurn("c2");
+//
+// trial.playerTwoTurn("b3");
+//
+// trial.playerOneTurn("c3");
+//
+// trial.playerTwoTurn("b1");
+//
+// trial.playerOneTurn("a2");
+//
+// trial.playerTwoTurn("c1");
+//
+// trial.playerOneTurn("a3");
+//
+// trial.checkForWin();
+// console.log(trial);
 
 //Two instances of Player;
 //9 squares with three states;
