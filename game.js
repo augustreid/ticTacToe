@@ -1,9 +1,9 @@
-// var Player = require("./player.js");
+// const Player = require("./player.js");
 
 class Game {
   constructor() {
-    this.player1 = new Player("one", "sunflower");
-    this.player2 = new Player("two", "bee");
+    this.player1
+    this.player2
     this.a1 = 0;
     this.a2 = 0;
     this.a3 = 0;
@@ -66,6 +66,8 @@ class Game {
     this.draw = false;
   };
 };
+
+// module.exports = Game;
 
 // var trial = new Game();
 //
