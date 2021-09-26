@@ -19,18 +19,18 @@ class Game {
   };
 
   playerOneTurn(square) {
-    if (!this[square]) {
+    if (this[square] === 0) {
       this[square] = 1;
       this.whosTurn = 2;
-      console.log(square);
+      console.log(this)
   };
 };
 
   playerTwoTurn(square) {
-    if (!this[square]) {
+    if (this[square] === 0) {
       this[square] = 2;
       this.whosTurn = 1;
-      console.log(square);
+      console.log(this[square])
     }
   };
 
