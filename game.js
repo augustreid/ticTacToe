@@ -1,5 +1,3 @@
-// const Player = require("./player.js");
-
 class Game {
   constructor() {
     this.player1
@@ -43,8 +41,8 @@ class Game {
       (this.a1 + this.b2 + this.c3 === (3 || 6)) ||
       (this.a3 + this.b2 + this.c1 === (3 || 6))) {
       this.win = true
-  } else if (this.a1 && this.a2 && this.a3 && this.b1 && this.b2 && this.b3
-    && this.c1 && this.c2 && this.c3) {
+  } else if ((this.a1 && this.a2 && this.a3 && this.b1 && this.b2 && this.b3
+    && this.c1 && this.c2 && this.c3) !== "empty") {
       this.draw = true;
     };
   };

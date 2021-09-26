@@ -27,6 +27,7 @@ function makeAMove() {
   playTurn(event);
   game.checkForWin();
   render();
+  declareWinner();
 }
 
 
@@ -42,9 +43,9 @@ function playTurn(event) {
 
 function declareWinner() {
   if (game.win && game.whosTurn === 2) {
-    gameTitle.innerText = "Player One wins!"
+    gameTitle.innerHTML = "Player One wins! &#127803"
   } else if (game.win && game.whosTurn === 1) {
-    gameTitle.innerText = "Player two wins!"
+    gameTitle.innerHTML = "Player two wins! &#128029"
   } else if (game.draw) {
     gameTitle.innerText = "It's a draw!"
   }
