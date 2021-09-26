@@ -28,7 +28,7 @@ function makeAMove() {
   playTurn(event);
   game.checkForWin();
   render();
-  console.log(game.win)
+  console.log(game.win);
 }
 
 
@@ -36,7 +36,6 @@ function playTurn(event) {
   var clickedSquare = event.target.id;
   if (game.whosTurn === 1) {
     game.playerOneTurn(clickedSquare);
-    console.log("clicked square", game[clickedSquare])
   } else if (game.whosTurn === 2) {
     game.playerTwoTurn(clickedSquare);
   };
@@ -47,13 +46,10 @@ function playTurn(event) {
 function render() {
   event.preventDefault();
   for (var i = 0; i < squares.length; i++) {
-    console.log("bloop");
     if (squares[i] === 1) {
       beesAndSuns[i].innerHTML = "&#127803";
-      console.log("suns");
     } else if (squares[i] === 2) {
       beesAndSuns[i].innerHTML = "&#128029";
-      console.log("bees");
     };
   };
 };
