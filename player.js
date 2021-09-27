@@ -18,5 +18,3 @@ class Player {
     return storedWins;
   };
 };
-
-// module.exports = Player;
