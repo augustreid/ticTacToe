@@ -90,6 +90,8 @@ function reset() {
 function trackWins() {
   var oneWins = player1.retrieveWinsFromStorage();
   var twoWins = player2.retrieveWinsFromStorage();
+  player1.wins = oneWins;
+  player2.wins = twoWins;
   if (oneWins) {
     player1Wins.innerText = `Wins: ${oneWins}`;
   } else {

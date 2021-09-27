@@ -6,7 +6,7 @@ class Player {
   };
 
   updateWins() {
-    this.wins += 1;
+    this.wins++;
   };
 
   saveWinstoStorage() {
