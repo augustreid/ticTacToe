@@ -13,7 +13,8 @@ var gameTitle = document.querySelector("#gameTitle")
 var game = new Game();
 var squares = []
 var beesAndSuns = [boardA1, boardA2, boardA3, boardB1, boardB2, boardB3, boardC1, boardC2, boardC3]
-
+var player1 = new Player("one", "sunflower");
+var player2 = new Player("two", "bee");
 
 //event listeners:
 board.addEventListener("click", makeAMove)
@@ -44,8 +45,10 @@ function playTurn(event) {
 function declareWinner() {
   if (game.win && game.whosTurn === 2) {
     gameTitle.innerHTML = "Player One wins! &#127803"
+    player1.updateWins();
   } else if (game.win && game.whosTurn === 1) {
     gameTitle.innerHTML = "Player two wins! &#128029"
+    player2.updateWins();
   } else if (game.draw) {
     gameTitle.innerText = "It's a draw!"
   }
