@@ -14,7 +14,8 @@ class Player {
   };
 
   retrieveWinsFromStorage() {
-    localStorage.getItem(`player ${this.id}`);
+    var storedWins = localStorage.getItem(`player ${this.id}`);
+    return storedWins;
   };
 };
 

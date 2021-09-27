@@ -9,6 +9,8 @@ var boardC1 = document.querySelector("#c1")
 var boardC2 = document.querySelector("#c2")
 var boardC3 = document.querySelector("#c3")
 var gameTitle = document.querySelector("#gameTitle")
+var player1Wins = document.querySelector("#player1");
+var player2Wins = document.querySelector("#player2");
 
 var game = new Game();
 var squares = []
@@ -18,6 +20,7 @@ var player2 = new Player("two", "bee");
 
 //event listeners:
 board.addEventListener("click", makeAMove)
+window.addEventListener("load", trackWins)
 
 
 
@@ -29,7 +32,7 @@ function makeAMove() {
   game.checkForWin();
   render();
   declareWinner();
-  setTimeout(function(){reset()}, 3000);
+  setTimeout(function(){reset()}, 4000);
 }
 
 
@@ -47,9 +50,13 @@ function declareWinner() {
   if (game.win && game.whosTurn === 2) {
     gameTitle.innerHTML = "Player One wins! &#127803"
     player1.updateWins();
+    player1.saveWinstoStorage();
+    player1Wins.innerText = `Wins: ${player1.wins}`;
   } else if (game.win && game.whosTurn === 1) {
     gameTitle.innerHTML = "Player two wins! &#128029"
     player2.updateWins();
+    player2.saveWinstoStorage();
+    player2Wins.innerText = `Wins: ${player2.wins}`;
   } else if (game.draw) {
     gameTitle.innerText = "It's a draw!"
   }
@@ -74,6 +81,21 @@ function nameTurn() {
     gameTitle.innerHTML = "Player Two's Turn &#128029"
   }
 }
+
+function trackWins() {
+var oneWins = player1.retrieveWinsFromStorage();
+var twoWins = player2.retrieveWinsFromStorage();
+if (oneWins) {
+player1Wins.innerText = `Wins: ${oneWins}`;
+} else {
+  player1Wins.innerText = "Wins: 0";
+};
+if (twoWins) {
+  player2Wins.innerText = `Wins: ${twoWins}`;
+} else {
+  player2Wins.innerText = "Wins: 0";
+}
+};
 
 function reset() {
   if (game.win || game.draw) {
