@@ -29,6 +29,7 @@ function makeAMove() {
   game.checkForWin();
   render();
   declareWinner();
+  setTimeout(function(){reset()}, 3000);
 }
 
 
@@ -73,3 +74,18 @@ function nameTurn() {
     gameTitle.innerHTML = "Player Two's Turn &#128029"
   }
 }
+
+function reset() {
+  if (game.win || game.draw) {
+    game.resetBoard();
+    for (var i = 0; i < squares.length; i++) {
+      beesAndSuns[i].innerHTML = "";
+    }
+    nameTurn();
+  }
+}
+
+
+//update player text for wins and store wins
+//Retrieve local storage in render function
+//Create timeout to reset the board.

@@ -48,7 +48,7 @@ class Game {
       (this.a1 + this.b2 + this.c3 === 6) ||
       (this.a3 + this.b2 + this.c1 === 3) ||
       (this.a3 + this.b2 + this.c1 === 6)) {
-      this.win = true
+      this.win = true;
   } else if
     (this.a1 !== "empty" && this.a2 !== "empty" &&
     this.a3 !== "empty" && this.b1 !== "empty" &&
