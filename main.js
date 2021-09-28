@@ -12,13 +12,13 @@ var gameTitle = document.querySelector("#gameTitle");
 var player1Wins = document.querySelector("#player1");
 var player2Wins = document.querySelector("#player2");
 
-var game = new Game();
+var player1 = new Player(1, "&#127803");
+var player2 = new Player(2, "&#128029");
+var game = new Game(player1, player2);
 var squares = []
 var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
   boardB2, boardB3, boardC1, boardC2, boardC3
 ]
-var player1 = new Player(1, "&#127803");
-var player2 = new Player(2, "&#128029");
 
 
 board.addEventListener("click", makeAMove)
@@ -72,14 +72,14 @@ function nameTurn() {
 function declareWinner() {
   if (game.winner === 1) {
     gameTitle.innerHTML = "Player One wins! &#127803";
-    player1.updateWins();
+    player1.updateRounds();
     player1.saveWinstoStorage();
-    player1Wins.innerText = `Wins: ${player1.wins}`;
+    player1Wins.innerText = `Wins: ${player1.rounds}`;
   } else if (game.winner === 2) {
     gameTitle.innerHTML = "Player two wins! &#128029";
-    player2.updateWins();
+    player2.updateRounds();
     player2.saveWinstoStorage();
-    player2Wins.innerText = `Wins: ${player2.wins}`;
+    player2Wins.innerText = `Wins: ${player2.rounds}`;
   } else if (game.draw) {
     gameTitle.innerText = "It's a draw!";
   };

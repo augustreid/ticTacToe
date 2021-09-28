@@ -6,7 +6,7 @@ class Game {
     this.player1Wins = player1.wins;
     this.player2Id = player2.id;
     this.player2Token = player2.token;
-    this.player2Rounds = player2.rounds;zc
+    this.player2Rounds = player2.rounds;
     this.player2wins = player2.wins;
     this.a1 = 0;
     this.a2 = 0;
@@ -95,5 +95,7 @@ class Game {
     this.draw = false;
     this.totalTurns = 0;
     this.winner = 0;
+    this.player1Rounds = 0;
+    this.player2Rounds = 0;
   };
 };
