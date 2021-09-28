@@ -8,13 +8,15 @@ class Player {
 
   updateRounds() {
     this.rounds++;
-    this.updateWins();
   }
 
   updateWins() {
     if (this.rounds >= 5) {
-      this.wins++;
-    }
+      this.wins++
+      this.saveWinstoStorage();
+    } else {
+      this.wins = 0;
+    };
   };
 
   saveWinstoStorage() {
