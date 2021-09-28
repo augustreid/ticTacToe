@@ -23,9 +23,9 @@ var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
   boardB2, boardB3, boardC1, boardC2, boardC3];
 
 
-board.addEventListener("click", makeAMove)
-window.addEventListener("load", trackWins)
-tournamentButton.addEventListener("click", startOver)
+board.addEventListener("click", makeAMove);
+window.addEventListener("load", trackWins);
+tournamentButton.addEventListener("click", startOver);
 
 
 function makeAMove() {
@@ -62,7 +62,6 @@ function render() {
     };
   };
   nameTurn();
-  trackWins();
 };
 
 function nameTurn() {
@@ -119,10 +118,6 @@ function trackWins() {
   };
 };
 
-function startOver() {
-  location.reload();
-};
-
 function showButton() {
   if (player1.rounds === 3 || player2.rounds === 3) {
     tournamentButton.classList.remove("hidden");
@@ -131,12 +126,6 @@ function showButton() {
   };
 };
 
-//Tournament:
-//html and css reload button
-//event listener for click to reload
-//html and css for tournament wins.
-//add Player property for tournament Wins
-//change the localstorage functions to tournament Wins
-//add function to update tournament wins when wins === 5
-//add player.wins to the board reset
-//add players to game class
+function startOver() {
+  location.reload();
+};

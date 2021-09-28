@@ -17,7 +17,6 @@ class Player {
     } else {
       var retrievedWins = this.retrieveWinsFromStorage();
       this.wins = retrievedWins || 0;
-      // this.wins = 0;
     };
   };
 
