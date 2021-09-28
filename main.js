@@ -9,20 +9,23 @@ var boardC1 = document.querySelector("#c1");
 var boardC2 = document.querySelector("#c2");
 var boardC3 = document.querySelector("#c3");
 var gameTitle = document.querySelector("#gameTitle");
-var player1Wins = document.querySelector("#player1");
-var player2Wins = document.querySelector("#player2");
+var player1Wins = document.querySelector("#player1Wins");
+var player2Wins = document.querySelector("#player2Wins");
+var player1Rounds = document.querySelector("#player1Rounds");
+var player2Rounds = document.querySelector("#player2Rounds");
+var tournamentButton = document.querySelector("#button");
 
-var game = new Game();
-var squares = []
-var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
-  boardB2, boardB3, boardC1, boardC2, boardC3
-]
 var player1 = new Player(1, "&#127803");
 var player2 = new Player(2, "&#128029");
+var game = new Game(player1, player2);
+var squares = [];
+var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
+  boardB2, boardB3, boardC1, boardC2, boardC3];
 
 
-board.addEventListener("click", makeAMove)
-window.addEventListener("load", trackWins)
+board.addEventListener("click", makeAMove);
+window.addEventListener("load", trackWins);
+tournamentButton.addEventListener("click", startOver);
 
 
 function makeAMove() {
@@ -72,13 +75,15 @@ function nameTurn() {
 function declareWinner() {
   if (game.winner === 1) {
     gameTitle.innerHTML = "Player One wins! &#127803";
+    player1.updateRounds();
     player1.updateWins();
-    player1.saveWinstoStorage();
+    player1Rounds.innerText = `Rounds: ${player1.rounds}`;
     player1Wins.innerText = `Wins: ${player1.wins}`;
   } else if (game.winner === 2) {
     gameTitle.innerHTML = "Player two wins! &#128029";
+    player2.updateRounds();
     player2.updateWins();
-    player2.saveWinstoStorage();
+    player2Rounds.innerText = `Rounds: ${player2.rounds}`;
     player2Wins.innerText = `Wins: ${player2.wins}`;
   } else if (game.draw) {
     gameTitle.innerText = "It's a draw!";
@@ -92,6 +97,7 @@ function reset() {
       beesAndSuns[i].innerHTML = "";
     };
     nameTurn();
+    showButton();
   };
 };
 
@@ -101,13 +107,25 @@ function trackWins() {
   player1.wins = oneWins;
   player2.wins = twoWins;
   if (oneWins) {
-    player1Wins.innerText = `Wins: ${oneWins}`;
+    player1Wins.innerText = `Wins: ${oneWins}`
   } else {
     player1Wins.innerText = "Wins: 0";
   };
   if (twoWins) {
-    player2Wins.innerText = `Wins: ${twoWins}`;
+    player2Wins.innerText = `Wins: ${twoWins}`
   } else {
     player2Wins.innerText = "Wins: 0";
   };
+};
+
+function showButton() {
+  if (player1.rounds === 3 || player2.rounds === 3) {
+    tournamentButton.classList.remove("hidden");
+    board.removeEventListener("click", makeAMove);
+    gameTitle.innerText = "Tournament Champion!"
+  };
+};
+
+function startOver() {
+  location.reload();
 };
