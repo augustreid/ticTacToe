@@ -127,8 +127,9 @@ function startOver() {
 function showButton() {
   if (player1.rounds === 5 || player2.rounds === 5) {
     tournamentButton.classList.remove("hidden");
-  }
-}
+    board.removeEventListener("click", makeAMove);
+  };
+};
 
 //Tournament:
 //html and css reload button
