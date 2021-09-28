@@ -11,7 +11,7 @@ class Player {
   }
 
   updateWins() {
-    if (this.rounds >= 5) {
+    if (this.rounds === 3) {
       this.wins++
       this.saveWinstoStorage();
     } else {
