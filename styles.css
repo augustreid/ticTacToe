@@ -45,6 +45,18 @@ body {
   border-bottom: 0;
 }
 
+.button {
+  border: 4px outset #75a5ff;
+  background-image: linear-gradient(#fffa75, #75a5ff);
+  border-radius: 40px;
+  font-family: inherit;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-top: 4%;
+  padding: 3%;
+  width: 50%;
+}
+
 .hidden {
   display: none;
 }

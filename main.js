@@ -18,10 +18,9 @@ var tournamentButton = document.querySelector("#button");
 var player1 = new Player(1, "&#127803");
 var player2 = new Player(2, "&#128029");
 var game = new Game(player1, player2);
-var squares = []
+var squares = [];
 var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
-  boardB2, boardB3, boardC1, boardC2, boardC3
-]
+  boardB2, boardB3, boardC1, boardC2, boardC3];
 
 
 board.addEventListener("click", makeAMove)
@@ -122,12 +121,13 @@ function trackWins() {
 
 function startOver() {
   location.reload();
-}
+};
 
 function showButton() {
-  if (player1.rounds === 5 || player2.rounds === 3) {
+  if (player1.rounds === 3 || player2.rounds === 3) {
     tournamentButton.classList.remove("hidden");
     board.removeEventListener("click", makeAMove);
+    gameTitle.innerText = "Tournament Champion!"
   };
 };
 

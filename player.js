@@ -8,14 +8,16 @@ class Player {
 
   updateRounds() {
     this.rounds++;
-  }
+  };
 
   updateWins() {
-    if (this.rounds === 3) {
+    if (this.rounds >= 3) {
       this.wins++
       this.saveWinstoStorage();
     } else {
-      this.wins = 0;
+      var retrievedWins = this.retrieveWinsFromStorage();
+      this.wins = retrievedWins || 0;
+      // this.wins = 0;
     };
   };
 
