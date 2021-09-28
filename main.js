@@ -111,3 +111,13 @@ function trackWins() {
     player2Wins.innerText = "Wins: 0";
   };
 };
+
+//Tournament:
+//html and css reload button
+//event listener for click to reload
+//html and css for tournament wins.
+//add Player property for tournament Wins
+//change the localstorage functions to tournament Wins
+//add function to update tournament wins when wins === 5
+//add player.wins to the board reset
+//add players to game class
