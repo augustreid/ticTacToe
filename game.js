@@ -20,8 +20,8 @@ class Game {
     if (this[square] === 0) {
       this[square] = 1;
       this.totalTurns++;
+    };
   };
-};
 
   playerTwoTurn(square) {
     if (this[square] === 0) {
@@ -44,35 +44,34 @@ class Game {
     this.checkDiagonalWin();
     if (this.winner) {
       this.win = true;
-  } else if
-    (this.totalTurns === 9) {
+    } else if (this.totalTurns === 9) {
       this.draw = true;
     };
     this.changeTurn();
   };
 
-    checkVerticalWin() {
-      if (((this.a1 === this.a2) && (this.a2 === this.a3) && (this.a3 === this.whosTurn)) ||
+  checkVerticalWin() {
+    if (((this.a1 === this.a2) && (this.a2 === this.a3) && (this.a3 === this.whosTurn)) ||
       ((this.b1 === this.b2) && (this.b2 === this.b3) && (this.b3 === this.whosTurn)) ||
       ((this.c1 === this.c2) && (this.c2 === this.c3) && (this.c3 === this.whosTurn))) {
-        this.winner = this.whosTurn;
-      };
+      this.winner = this.whosTurn;
     };
+  };
 
-    checkHorizontalWin() {
-      if (((this.a1 === this.b1) && (this.b1 === this.c1) && (this.c1 === this.whosTurn)) ||
-        ((this.a2 === this.b2) && (this.b2 === this.c2) && (this.c2 === this.whosTurn)) ||
-        ((this.a3 === this.b3) && (this.b3 === this.c3) && (this.c3 === this.whosTurn))) {
-          this.winner = this.whosTurn;
-        };
+  checkHorizontalWin() {
+    if (((this.a1 === this.b1) && (this.b1 === this.c1) && (this.c1 === this.whosTurn)) ||
+      ((this.a2 === this.b2) && (this.b2 === this.c2) && (this.c2 === this.whosTurn)) ||
+      ((this.a3 === this.b3) && (this.b3 === this.c3) && (this.c3 === this.whosTurn))) {
+      this.winner = this.whosTurn;
     };
+  };
 
-    checkDiagonalWin() {
-      if (((this.a1 === this.b2) && (this.b2 === this.c3) && (this.c3 === this.whosTurn)) ||
+  checkDiagonalWin() {
+    if (((this.a1 === this.b2) && (this.b2 === this.c3) && (this.c3 === this.whosTurn)) ||
       ((this.a3 === this.b2) && (this.b2 === this.c1) && (this.c1 === this.whosTurn))) {
-        this.winner = this.whosTurn;
-      };
+      this.winner = this.whosTurn;
     };
+  };
 
   resetBoard() {
     this.a1 = 0;
