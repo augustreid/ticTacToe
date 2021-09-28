@@ -14,7 +14,8 @@ var player2Wins = document.querySelector("#player2");
 
 var game = new Game();
 var squares = []
-var beesAndSuns = [boardA1, boardA2, boardA3, boardB1, boardB2, boardB3, boardC1, boardC2, boardC3]
+var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
+  boardB2, boardB3, boardC1, boardC2, boardC3]
 var player1 = new Player("one", "sunflower");
 var player2 = new Player("two", "bee");
 
@@ -36,10 +37,17 @@ function playTurn(event) {
   if (game.whosTurn === 1) {
     game.playerOneTurn(clickedSquare);
   } else if (game.whosTurn === 2) {
-    game.playerTwoTurn(clickedSquare);
+    game.playerTwoTurn(clickedSquare); //use argument instead of two functions
   };
-  squares = [game.a1, game.a2, game.a3, game.b1, game.b2, game.b3, game.c1, game.c2, game.c3];
+  squares = [game.a1, game.a2, game.a3, game.b1,
+    game.b2, game.b3, game.c1, game.c2, game.c3]; //make separate function
 };
+
+//Look over everything "does it make the most sense for this to be here?"
+//Is it main.js responsibility to know __
+//If something looks too long, it probablly is. :-(
+//Single responsibility. If the function does something AND something else...
+//
 
 function render() {
   event.preventDefault();
@@ -47,7 +55,7 @@ function render() {
     if (squares[i] === 1) {
       beesAndSuns[i].innerHTML = "&#127803";
     } else if (squares[i] === 2) {
-      beesAndSuns[i].innerHTML = "&#128029";
+      beesAndSuns[i].innerHTML = "&#128029"; //
     };
   };
   nameTurn();
