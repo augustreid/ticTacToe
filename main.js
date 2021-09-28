@@ -13,6 +13,7 @@ var player1Wins = document.querySelector("#player1Wins");
 var player2Wins = document.querySelector("#player2Wins");
 var player1Rounds = document.querySelector("#player1Rounds");
 var player2Rounds = document.querySelector("#player2Rounds");
+var tournamentButton = document.querySelector("#button");
 
 var player1 = new Player(1, "&#127803");
 var player2 = new Player(2, "&#128029");
@@ -25,6 +26,7 @@ var beesAndSuns = [boardA1, boardA2, boardA3, boardB1,
 
 board.addEventListener("click", makeAMove)
 window.addEventListener("load", trackWins)
+tournamentButton.addEventListener("click", startOver)
 
 
 function makeAMove() {
@@ -97,6 +99,7 @@ function reset() {
       beesAndSuns[i].innerHTML = "";
     };
     nameTurn();
+    showButton();
   };
 };
 
@@ -116,6 +119,16 @@ function trackWins() {
     player2Wins.innerText = "Wins: 0";
   };
 };
+
+function startOver() {
+  location.reload();
+}
+
+function showButton() {
+  if (player1.rounds === 5 || player2.rounds === 5) {
+    tournamentButton.classList.remove("hidden");
+  }
+}
 
 //Tournament:
 //html and css reload button

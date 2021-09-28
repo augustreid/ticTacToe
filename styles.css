@@ -44,3 +44,7 @@ body {
 .no-bottom {
   border-bottom: 0;
 }
+
+.hidden {
+  display: none;
+}
