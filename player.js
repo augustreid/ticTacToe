@@ -6,7 +6,7 @@ class Player {
   };
 
   updateWins() {
-    this.wins += 1;
+    this.wins++;
   };
 
   saveWinstoStorage() {
@@ -18,5 +18,3 @@ class Player {
     return storedWins;
   };
 };
-
-// module.exports = Player;
